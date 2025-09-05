@@ -1,16 +1,16 @@
 ## Descrição
-Desenvolvido API REST para obter o produtor com maior intervalo entre dois prêmios consecutivos, e o que obteve dois prêmios mais rápido de uma lista de indicados e vencedores da categoria <b>Pior Filme</b> do <b>Golden Raspberry Awards</b>.
+API REST para obter o produtor com maior intervalo entre dois prêmios consecutivos, e o que obteve dois prêmios mais rápido de uma lista de indicados e vencedores da categoria <b>Pior Filme</b> do <b>Golden Raspberry Awards</b>.
 
 ## Conhecimentos
 Nessa desafio da <b>Outsera</b> foi adicionado as seguintes boas práticas e tecnologias para avaliação de conhecimento apenas:
 
-1. NodeJS
+1. NodeJS;
 2. DDD - Domain Driven Design;
-3. NestJS Framework
-4. MikroORM e sqlite (banco em memória)
-5. Testes unitários e E2E com Jest
-6. Padrões API REST
-7. Docker
+3. NestJS Framework;
+4. MikroORM e sqlite (banco em memória);
+5. Testes unitários e E2E com Jest;
+6. Padrões API REST;
+7. Docker;
 
 ## Requisitos do projeto
   1. Node 20;
