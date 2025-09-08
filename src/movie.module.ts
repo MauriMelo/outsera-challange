@@ -7,28 +7,24 @@ import { ProducerModel } from './infra/repositories/mikroorm/entities/producer.m
 import ProducerAwardsUseCase from './domain/use-cases/producer-awards.use-case';
 import ProducerAwardsService from './domain/services/producer-awards.service';
 
-
-
 @Module({
-	imports: [
-		MikroOrmModule.forFeature([MovieModel, ProducerModel]),
-	],
-	providers: [
-		{
-			provide: 'MovieRepository',
-			useClass: MovieMikroORMRepository,
-		},
-		LoadMoviesService,
-		ProducerAwardsUseCase,
-		ProducerAwardsService
-	],
-	exports: [
-		{
-			provide: 'MovieRepository',
-			useClass: MovieMikroORMRepository,
-		},
-		LoadMoviesService,
-		ProducerAwardsUseCase
-	]
+  imports: [MikroOrmModule.forFeature([MovieModel, ProducerModel])],
+  providers: [
+    {
+      provide: 'MovieRepository',
+      useClass: MovieMikroORMRepository,
+    },
+    LoadMoviesService,
+    ProducerAwardsUseCase,
+    ProducerAwardsService,
+  ],
+  exports: [
+    {
+      provide: 'MovieRepository',
+      useClass: MovieMikroORMRepository,
+    },
+    LoadMoviesService,
+    ProducerAwardsUseCase,
+  ],
 })
-export class MovieModule { }
+export class MovieModule {}

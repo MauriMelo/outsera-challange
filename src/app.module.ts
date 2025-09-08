@@ -12,19 +12,15 @@ import { LoadMoviesService } from './infra/services/load_movies.service';
       entitiesTs: ['./src/infra/repositories/mikroorm/entities'],
       dbName: ':memory:',
       driver: SqliteDriver,
-      allowGlobalContext: true
+      allowGlobalContext: true,
     }),
-    MovieModule
+    MovieModule,
   ],
   controllers: [ProducersController],
 })
-export class AppModule implements OnModuleInit{
-  constructor(
-    private readonly loadMoviesService: LoadMoviesService
-  ) {
-
-  }
+export class AppModule implements OnModuleInit {
+  constructor(private readonly loadMoviesService: LoadMoviesService) {}
   async onModuleInit() {
-    await this.loadMoviesService.execute()
+    await this.loadMoviesService.execute();
   }
 }

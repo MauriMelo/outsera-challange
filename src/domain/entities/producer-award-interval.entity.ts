@@ -1,46 +1,46 @@
-import Entity from "./entity";
+import Entity from './entity';
 
 type Input = {
-  producer: string,
-  previousWin: number
-  followingWin?: number
-  interval?: number
-}
+  producer: string;
+  previousWin: number;
+  followingWin?: number;
+  interval?: number;
+};
 
 export class ProducerAwardInterval extends Entity<Input> {
   constructor(props: Input) {
-    super(props)
+    super(props);
   }
 
   get producer() {
-    return this.props.producer
+    return this.props.producer;
   }
 
   get previousWin() {
-    return this.props.previousWin
+    return this.props.previousWin;
   }
 
   get followingWin() {
-    return this.props.followingWin
+    return this.props.followingWin;
   }
 
   get interval() {
-    return this.props.interval
+    return this.props.interval;
   }
 
   set followingWin(value: number | undefined) {
-    this.props.followingWin = value
+    this.props.followingWin = value;
   }
 
   set interval(value: number | undefined) {
-    this.props.interval = value
+    this.props.interval = value;
   }
 
   set previousWin(value: number) {
-    this.props.previousWin = value
+    this.props.previousWin = value;
   }
 
   clone() {
-    return new ProducerAwardInterval({ ...this.props })
+    return new ProducerAwardInterval({ ...this.props });
   }
 }

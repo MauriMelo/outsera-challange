@@ -14,7 +14,7 @@ export class FindMovieDto {
   studios?: string;
 
   @IsString()
-  @IsOptional() 
+  @IsOptional()
   producer?: string;
 
   @IsString()

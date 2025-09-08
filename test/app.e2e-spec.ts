@@ -17,31 +17,30 @@ describe('ProducerController (e2e)', () => {
   });
 
   afterAll(async () => {
-    await app.close()
-  })
+    await app.close();
+  });
 
   it('/producers/awards-interval (GET)', () => {
     return request(app.getHttpServer())
       .get('/producers/awards-interval')
-      .expect(200).expect(
-        { 
-          min: [
-            { 
-              producer: "Joel Silver",
-              previousWin: 1990,
-              followingWin: 1991,
-              interval: 1 
-            }
-          ], 
-          max: [
-            { 
-              producer: "Matthew Vaughn",
-              previousWin: 2002,
-              followingWin: 2015,
-              interval: 13
-            }
-          ] 
-        }
-      )
+      .expect(200)
+      .expect({
+        min: [
+          {
+            producer: 'Joel Silver',
+            previousWin: 1990,
+            followingWin: 1991,
+            interval: 1,
+          },
+        ],
+        max: [
+          {
+            producer: 'Matthew Vaughn',
+            previousWin: 2002,
+            followingWin: 2015,
+            interval: 13,
+          },
+        ],
+      });
   });
 });

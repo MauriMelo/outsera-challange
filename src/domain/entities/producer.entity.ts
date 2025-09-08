@@ -1,15 +1,15 @@
-import Entity from "./entity"
+import Entity from './entity';
 
 interface Props {
-	name: string
+  name: string;
 }
 
 export default class Producer extends Entity<Props> {
-	constructor(props: Props, id?: number) {
-		super(props, id)
-	}
+  constructor(props: Props, id?: number) {
+    super(props, id);
+  }
 
-	get name() {
-		return this.props.name
-	}
+  get name() {
+    return this.props.name;
+  }
 }

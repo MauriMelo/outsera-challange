@@ -1,19 +1,25 @@
-import { Controller, Get, InternalServerErrorException } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  InternalServerErrorException,
+  Logger,
+} from '@nestjs/common';
 import ProducerAwardsUseCase from 'src/domain/use-cases/producer-awards.use-case';
 
 @Controller('producers')
 export class ProducersController {
-  constructor(
-    private readonly producerAwardsUseCase: ProducerAwardsUseCase
-  ) {}
+  private readonly logger = new Logger(ProducersController.name);
+  constructor(private readonly producerAwardsUseCase: ProducerAwardsUseCase) {}
 
   @Get('awards-interval')
   async index() {
     try {
-      return await this.producerAwardsUseCase.execute()
-    } catch(err) {
-      console.log(err);
-      throw new InternalServerErrorException('Não foi buscar prêmios consecutivos')
+      return await this.producerAwardsUseCase.execute();
+    } catch (error: unknown) {
+      this.logger.error('Erro ao buscar prêmios consecutivos', error.stack);
+      throw new InternalServerErrorException(
+        'Erro ao buscar prêmios consecutivos',
+      );
     }
   }
 }
