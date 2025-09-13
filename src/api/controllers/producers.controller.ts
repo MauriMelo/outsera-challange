@@ -16,10 +16,14 @@ export class ProducersController {
     try {
       return await this.producerAwardsUseCase.execute();
     } catch (error: unknown) {
-      this.logger.error('Erro ao buscar prêmios consecutivos', error.stack);
-      throw new InternalServerErrorException(
-        'Erro ao buscar prêmios consecutivos',
-      );
+      if (error instanceof Error) {
+        this.logger.error('Erro ao buscar prêmios consecutivos', error.stack);
+        throw new InternalServerErrorException(
+          'Erro ao buscar prêmios consecutivos',
+        );
+      }
+
+      throw error;
     }
   }
 }

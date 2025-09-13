@@ -52,14 +52,10 @@ export default class ProducerAwardsService {
     }
 
     const interval = min[0].interval || 0;
-    const producer = min[0].producer;
 
     if (producerInterval.interval && producerInterval.interval < interval) {
       min = [producerInterval.clone()];
-    } else if (
-      producer !== producerInterval.producer &&
-      producerInterval.interval === interval
-    ) {
+    } else if (producerInterval.interval === interval) {
       min.push(producerInterval.clone());
     }
 
@@ -76,13 +72,9 @@ export default class ProducerAwardsService {
     }
 
     const interval = max[0].interval || 0;
-    const producer = max[0].producer;
     if (producerInterval.interval && producerInterval.interval > interval) {
       max = [producerInterval.clone()];
-    } else if (
-      producer !== producerInterval.producer &&
-      producerInterval.interval === interval
-    ) {
+    } else if (producerInterval.interval === interval) {
       max.push(producerInterval.clone());
     }
 
