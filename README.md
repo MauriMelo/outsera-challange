@@ -8,7 +8,7 @@ Nessa desafio da <b>Outsera</b> foi adicionado as seguintes boas práticas e tec
 2. DDD - Domain Driven Design;
 3. NestJS Framework;
 4. MikroORM e sqlite (banco em memória);
-5. Testes unitários e E2E com Jest;
+5. Testes unitários e Integração com Jest;
 6. Padrões API REST;
 7. Docker;
 
@@ -66,6 +66,6 @@ http://localhost:3000/producers/awards-interval
 $ npm run test
 
 # teste de integração
-$ npm run test:e2e
+$ npm run test:integration
 
 ```
